@@ -17,7 +17,7 @@ parser.add_argument('--Device',
                     metavar='-D',
                     type=str,
                     required=False,
-                    default='cpu',
+                    default='cuda',
                     help="cuda or cpu")
 parser.add_argument('--test',
                     action='store_true',

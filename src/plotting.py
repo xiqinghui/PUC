@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
+import scienceplots
 from matplotlib.backends.backend_pdf import PdfPages
-import statistics
 import os, torch
 import numpy as np
+
 
 plt.style.use(['science', 'ieee'])
 plt.rcParams["text.usetex"] = False

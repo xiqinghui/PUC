@@ -32,8 +32,8 @@ def plot_attention(model, layers, folder):
     os.makedirs(f'plots/{folder}/', exist_ok=True)
     for layer in range(layers):  # layers
         fig, (axs, axs1) = plt.subplots(1, 2, figsize=(10, 4))
-        heatmap = seaborn.heatmap(model.transformer_encoder1.layers[layer].att[0].data.cpu(), ax=axs)
-        heatmap.set_title("Local_attention", fontsize=10)
+        # heatmap = seaborn.heatmap(model.transformer_encoder1.layers[layer].att[0].data.cpu(), ax=axs)
+        # heatmap.set_title("Local_attention", fontsize=10)
         heatmap = seaborn.heatmap(model.transformer_encoder2.layers[layer].att[0].data.cpu(), ax=axs1)
         heatmap.set_title("Global_attention", fontsize=10)
     heatmap.get_figure().savefig(f'plots/{folder}/attention-score.png')
