@@ -705,40 +705,6 @@ class PUC(nn.Module):
         x2f = x2f.permute(0, 2, 1) * 0.7 + var * 0.3
         return x2f.permute(0, 2, 1)
 
-        # g_atts = self.g_tcn(src)
-        #
-        # g_atts = self.se(g_atts)
-        #
-        # num_nodes = g_atts.size(0)
-        # g = dgl.DGLGraph()
-        # g = g.to('cuda')
-        # g.add_nodes(num_nodes)
-        # g = dgl.add_self_loop(g)
-        # # 定义节点之间的边，这里使用相邻时间步之间存在边
-        # edges = [(i, i + 1) for i in range(num_nodes - 1)]
-        # zsrc, dst = zip(*edges)
-        # g.add_edges(zsrc, dst)
-        # data_processed = torch.mean(g_atts, dim=-1, keepdim=True)
-        # features = data_processed.view(num_nodes, -1)
-        # getmodelout = self.gatModel(g, features)
-        #
-        # feature = self.feature(g_atts)
-        #
-        # nsrc4 = getmodelout + feature + g_atts
-        #
-        # src2 = nsrc4.permute(2, 0, 1) * math.sqrt(self.n_feats)
-        # src2 = self.pos_encoder(src2)
-        # memory = self.transformer_encoder2(src2)
-        # c2 = memory + self.fcn(memory)
-        # x2 = self.decoder2(c2.permute(1, 2, 0))
-        #
-        # x2f = self.forecasting_model(x2.permute(0, 2, 1))
-        #
-        # var = self.var(src)
-        #
-        # x2f = x2f.permute(0, 2, 1) * 0.7 + var * 0.3
-        #
-        # return x2f.permute(0, 2, 1)
 
     def plot_dimension_heatmap(self, ascore, timestamps=None):
         """集成时空异常热力图"""
